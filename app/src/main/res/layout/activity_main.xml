@@ -68,6 +68,14 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/res_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="40px"
+            android:text="@string/result_toast"
+            android:visibility="invisible"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
