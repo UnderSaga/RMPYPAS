@@ -25,7 +25,13 @@ class QuizViewModel : ViewModel() {
         currentIndex = (currentIndex + 1) % questionBank.size
     }
     fun moveToBack() {
-        currentIndex = (currentIndex - 1) % questionBank.size
+        currentIndex = if(currentIndex == 0){
+            questionBank.size - 1
+        } else
+            (currentIndex - 1) % questionBank.size
+    }
+    fun moveToFirst() {
+        currentIndex = 0
     }
 
     init {

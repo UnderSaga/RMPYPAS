@@ -12,9 +12,11 @@
 
     <string name="true_button">Правда</string>
     <string name="false_button">Ложь</string>
+    <string name="again_button">Начать заново</string>
 
     <string name="correct_toast">Верно!</string>
     <string name="incorrect_toast">Неверно!</string>
     <string name="result_toast">0</string>
+    <string name="try_count">0</string>
 
 </resources>
