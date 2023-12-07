@@ -12,6 +12,7 @@
 
     <string name="true_button">Правда</string>
     <string name="false_button">Ложь</string>
+    <string name="end_button">Закончить</string>
     <string name="again_button">Начать заново</string>
 
     <string name="correct_toast">Верно!</string>
