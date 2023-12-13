@@ -12,7 +12,6 @@ private const val TAG = "SecondActivity"
 
 class SecondActivity: AppCompatActivity() {
     private lateinit var againButton: Button
-    private lateinit var tryView: TextView
     private lateinit var resView: TextView
 
 
@@ -27,13 +26,9 @@ class SecondActivity: AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         againButton = findViewById(R.id.again_button)
-        tryView = findViewById(R.id.try_text_view)
         resView = findViewById(R.id.res_view)
 
-        val bundle = intent.extras
-        if (bundle != null) {
-            resView.text = bundle.getInt("result", 0).toString()
-        }
+        resView.text = intent.getStringExtra("result")
 
         againButton.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)

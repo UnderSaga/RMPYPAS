@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nextButton: ImageButton
     private lateinit var backButton: ImageButton
     private lateinit var questionTextView: TextView
-    var countAnswer: Int = 0
+    private var countAnswer = 0
 
     private val quizViewModel: QuizViewModel by lazy {
         ViewModelProvider(this)[QuizViewModel::class.java]
@@ -110,15 +110,19 @@ class MainActivity : AppCompatActivity() {
         if(quizViewModel.currentIndex == quizViewModel.questionBank.size - 1) {
             trueButton.isEnabled = false
             falseButton.isEnabled = false
+        }
+        if(quizViewModel.currentIndex == quizViewModel.questionBank.size) {
             countAnswer = 0
         }
     }
 
     private fun endTest() {
         val bundle = Bundle()
-        bundle.putInt("result", countAnswer)
-        var intent = Intent(this, SecondActivity::class.java)
-        intent.putExtras(bundle)
+        bundle.putString("result", countAnswer.toString())
+
+        var intent = Intent(this, SecondActivity::class.java).apply {
+            putExtras(bundle)
+        }
         startActivity(intent)
     }
 
